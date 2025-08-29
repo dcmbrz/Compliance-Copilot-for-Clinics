@@ -1,0 +1,15 @@
+[project]
+name = "mce-root-workspace"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+
+# Map internal packages by *name* to come from the root-workspace
+[tool.uv.sources]
+graph = { workspace = true}   # “graph” will be provided by a workspace member
+
+[tool.uv.workspace]
+# List all members (globs allowed). Each must have its own pyproject.toml.
+members = ["graph", "apps/api", "ingestor", "rag"]
+

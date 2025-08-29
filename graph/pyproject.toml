@@ -1,0 +1,35 @@
+[project]
+name = "graph"
+version = "0.1.0"
+description = "Graph domain models & helpers"
+readme = "README.md"
+authors = [
+    { name = "Michael Ekwueme", email = "ekwuemem@uci.edu" }
+]
+requires-python = ">=3.11"
+
+# Runtime dependencies: installed in production and development.
+# Pydantic v2+ gives modern, fast data validation and schema classes.
+
+dependencies = ["pydantic>=2.7"]
+
+[project.scripts]
+graph = "graph:main"
+
+# =========================
+# Build backend declaration
+# =========================
+
+[build-system]
+requires = ["hatchling>=1.25"]  # Build tool used to produce wheels/sdists
+build-backend = "hatchling.build"
+
+
+# ===============================
+# Dev-only dependency groups (uv)
+# ===============================
+
+[dependency-groups]
+# Install with: uv sync --project ./graph --group dev
+# ruff  = linter/formatter; pytest = tests; mypy = static typing
+dev = ["ruff", "pytest", "mypy"]
