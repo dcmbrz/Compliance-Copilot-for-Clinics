@@ -1,8 +1,24 @@
 [project]
-name = "rag"
+name = "mce-rag"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.9"
-dependencies = []
+requires-python = ">=3.11"
+dependencies = [
+"fastapi>=0.112",
+ "uvicorn>=0.30", 
+ "graph"
+ ]
 
+[project.scripts] # creates a commond that runs the rag script
+mce-rag = "mce_rag.main:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mce_rag"]
+
+[dependency-groups]
+dev = ["ruff", "pytest", "mypy", "httpx", "pytest-asyncio"]
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
