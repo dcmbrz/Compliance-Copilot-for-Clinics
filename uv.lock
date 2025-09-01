@@ -173,7 +173,7 @@ wheels = [
 [[package]]
 name = "mce-api"
 version = "0.1.0"
-source = { editable = "apps/api" }
+source = { editable = "api" }
 dependencies = [
     { name = "fastapi" },
     { name = "graph" },

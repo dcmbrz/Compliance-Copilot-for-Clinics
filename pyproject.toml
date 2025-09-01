@@ -11,5 +11,6 @@ graph = { workspace = true}   # “graph” will be provided by a workspace memb
 
 [tool.uv.workspace]
 # List all members (globs allowed). Each must have its own pyproject.toml.
-members = ["graph", "apps/api", "ingestor", "rag"]
+members = ["graph", "api", "ingestor", "rag"]
+
 
