@@ -1,5 +1,5 @@
 def main():
-    print("Hello from my-monorepo-1-0!")
+    print("Hello from ingestor")
 
 
 if __name__ == "__main__":
